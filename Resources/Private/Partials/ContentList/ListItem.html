@@ -1,0 +1,56 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<div class="article image-header-0 image-beside-left image-beside csc-textpic-intext-left-nowrap-{article.uid}">
+    <f:if condition="{vid:compareString(needle:'youtu', hayStack:article.video, method:'contains')}">
+        <f:then>
+
+            <div class="image-wrap col-xs-12 col-md-4">
+                <vid:videoPlayer id="video_{article.uid}" class="video-js vjs-default-skin embed-responsive embed-responsive-4by3"
+                                 url="{article.video}" type="youtube"/>
+            </div>
+
+        </f:then>
+        <f:else>
+            <vid:fal uid="{article.uid}" cField="{article.image}" as="imageItem">
+                <f:if condition="{imageItem}">
+                    <div class="image-wrap col-xs-12 col-md-4">
+                        <figure class="image">
+                            <img class="lazyload" src="/fileadmin/templates/images/blank.gif"
+                                 data-src="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{listImageMaxWidth}' treatIdAsReference:'1')}"
+                                 data-bigger="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{biggerwidth}' treatIdAsReference:'1')}"
+                                 data-large="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{largewidth}' treatIdAsReference:'1')}"
+                                 data-medium="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{mediumwidth}' treatIdAsReference:'1')}"
+                                 data-small="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{smallwidth}' treatIdAsReference:'1')}"
+                                 alt="{imageItem.0.alternative}" title="{imageItem.0.title}">
+                        </figure>
+                    </div>
+                </f:if>
+            </vid:fal>
+        </f:else>
+    </f:if>
+    <div class="text crop">
+        <div class="category"><f:link.page pageUid="{article.page.uid}">{article.page.title}</f:link.page></div>
+        <f:link.action action="show" controller="DetailView" pageUid="{article.page.uid}"
+                       arguments="{universalContent:article}"><h2>{article.header}</h2></f:link.action>
+        <div class="date">{article.date -> f:format.date(format: '{f:translate(key: \'dateformat\')}')}</div>
+        <f:link.action action="show" controller="DetailView" pageUid="{article.page.uid}" arguments="{universalContent:article, currentPage:currentPage}">
+            <vid:IfTrimmedlength condition="{article.short}">
+                <f:then>
+                    <f:format.crop maxCharacters="390"
+                                   append=" ... "
+                                   respectWordBoundaries="true" respectHtml="true">
+                        <f:format.html><vid:stripTags>{article.short}</vid:stripTags> </f:format.html>
+                    </f:format.crop>
+                    <span class='morelink'>{f:translate(key: 'tx_universalcontentlists.contentlist.more')}</span>
+                </f:then>
+                <f:else>
+                    <f:format.crop maxCharacters="390"
+                                   append=" ... "
+                                   respectWordBoundaries="true" respectHtml="true">
+                        <f:format.html><vid:stripTags>{article.bodytext}</vid:stripTags></f:format.html>
+                    </f:format.crop>
+                    <span class='morelink'>{f:translate(key: 'tx_universalcontentlists.contentlist.more')}</span>
+                </f:else>
+            </vid:IfTrimmedlength>
+        </f:link.action>
+    </div>
+</div>

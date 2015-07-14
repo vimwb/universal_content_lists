@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de"  datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
+		  product-name="universal_content_lists">
+		<header/>
+		<body>
+
+            <!-- Backend Module -->
+
+            <trans-unit id="mlang_tabs_tab">
+                <source>Migration</source>
+	            <target>Migration</target>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source></source>
+	            <target></target>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tablabel">
+                <source>Migration</source>
+	            <target>Migration</target>
+            </trans-unit>
+
+            <!-- Backend Wizzards -->
+            <trans-unit id="content_element_tab.universal_content">
+                <source>Universal Content</source>
+	            <target>Allgemeiner Inhalt</target>
+            </trans-unit>
+
+            <trans-unit id="content_element.article">
+                <source>Article</source>
+	            <target>Artikel</target>
+            </trans-unit>
+
+            <trans-unit id="content_element.article_description">
+                <source>Article Element with Headline, Bodytext and Image</source>
+	            <target>Artikel-Element mit Überschrift, Fliesstext und Bild</target>
+            </trans-unit>
+
+            <trans-unit id="content_element.banner">
+                <source>Banner</source>
+	            <target>Banner</target>
+            </trans-unit>
+
+            <trans-unit id="content_element.banner_description">
+                <source>Banner Image Element with Link</source>
+	            <target>Banner Bild Element mit Link</target>
+            </trans-unit>
+
+            <trans-unit id="plugin.contentlist">
+                <source>Content List</source>
+	            <target>Content-Liste</target>
+            </trans-unit>
+
+            <trans-unit id="plugin.contentlist_description">
+                <source>List of Content Elements (Articles) with Paging and Detailview</source>
+	            <target>Liste der Content Elemente (Artikel) mit Numerierung und Detail-Ansicht</target>
+            </trans-unit>
+
+
+            <!-- flexform  -->
+
+            <trans-unit id="settings">
+                <source>Settings</source>
+	            <target>Einstellungen</target>
+            </trans-unit>
+
+            <trans-unit id="displaymode">
+                <source>Display Mode</source>
+	            <target>Anzeigemodus</target>
+            </trans-unit>
+
+            <trans-unit id="displaymode.list">
+                <source>List</source>
+	            <target>Liste</target>
+            </trans-unit>
+
+            <trans-unit id="displaymode.taglist">
+                <source>Tag List</source>
+	            <target>Tag-Liste</target>
+            </trans-unit>
+
+            <trans-unit id="displaymode.detail">
+                <source>Detail</source>
+	            <target>Detail</target>
+            </trans-unit>
+
+            <!-- settings  -->
+
+            <trans-unit id="settings.isTagList">
+                <source>is Taglist</source>
+	            <target>ist Tag-Liste</target>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode">
+                <source>Select Mode: Select Items from current Page or from Pages</source>
+	            <target>Auswahlmodus: Wähle Elemente der aktuellen oder aller Seiten</target>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.currentPage">
+                <source>Show Items from current Page</source>
+	            <target>Zeige Elemente der aktuellen Seite</target>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.page">
+                <source>select Items from selected Pages</source>
+	            <target>Wähle Elemente von ausgesuchten Seiten</target>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.global">
+                <source>select Items global</source>
+	            <target>Wähle alle Elemente</target>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.searchresults">
+                <source>select Search Results</source>
+                <target>Zeige Suchergebnisse</target>
+            </trans-unit>
+
+            <trans-unit id="settings.limitToCategories">
+                <source>select Items from this Categories</source>
+	            <target>Wähle Elemente aus dieser Kategorie</target>
+            </trans-unit>
+
+            <trans-unit id="settings.limitTocColPosIDs">
+                <source>select Items from this Columns</source>
+	            <target>Wähle Elemente aus dieser Spalte</target>
+            </trans-unit>
+
+            <trans-unit id="settings.usePaging">
+                <source>Show page browser</source>
+	            <target>Zeige Seitenauswahl</target>
+            </trans-unit>
+
+            <trans-unit id="settings.itemsPerPage">
+                <source>Number of articles per Page</source>
+	            <target>Anzahl der Artikel pro Seite</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="settings.sortfield">
+                <source>Sort Field</source>
+	            <target>Sortieren</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.sorting">
+                <source>Sorting</source>
+	            <target>Sortierung</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.colPos">
+                <source>Column</source>
+	            <target>Spalte</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.date">
+                <source>Date</source>
+	            <target>Datum</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.crdate">
+                <source>Creation Date</source>
+	            <target>Erstellungstag</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.tstamp">
+                <source>Last Modified Date</source>
+	            <target>Zuletzt bearbeitet</target>
+            </trans-unit>
+
+
+            <trans-unit id="settings.sorting">
+                <source>Sorting</source>
+	            <target>Sortierung</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sorting.asc">
+                <source>Ascending</source>
+	            <target>Aufsteigend</target>
+            </trans-unit>
+
+            <trans-unit id="settings.sorting.desc">
+                <source>Descending</source>
+	            <target>Absteigend</target>
+            </trans-unit>
+
+
+            <!-- ColPos -->
+
+            <trans-unit id="articles">
+                <source>Articles</source>
+	            <target>Artikel</target>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>

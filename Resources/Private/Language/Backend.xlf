@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-09-19T09:11:39Z"
+		  product-name="universal_content_lists">
+		<header/>
+		<body>
+
+            <!-- Backend Module -->
+
+            <trans-unit id="mlang_tabs_tab">
+                <source>Migration</source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="mlang_labels_tablabel">
+                <source>Migration</source>
+            </trans-unit>
+
+            <!-- Backend Wizzards -->
+            <trans-unit id="content_element_tab.universal_content">
+                <source>Universal Content</source>
+            </trans-unit>
+
+            <trans-unit id="content_element.article">
+                <source>Article</source>
+            </trans-unit>
+
+            <trans-unit id="content_element.article_description">
+                <source>Article Element with Headline, Bodytext and Image</source>
+            </trans-unit>
+
+            <trans-unit id="content_element.banner">
+                <source>Banner</source>
+            </trans-unit>
+
+            <trans-unit id="content_element.banner_description">
+                <source>Banner Image Element with Link</source>
+            </trans-unit>
+
+            <trans-unit id="plugin.contentlist">
+                <source>Content List</source>
+            </trans-unit>
+
+            <trans-unit id="plugin.contentlist_description">
+                <source>List of Content Elements (Articles) with Paging and Detailview</source>
+            </trans-unit>
+
+
+            <!-- flexform  -->
+
+            <trans-unit id="settings">
+                <source>Settings</source>
+            </trans-unit>
+
+            <trans-unit id="displaymode">
+                <source>Display Mode</source>
+            </trans-unit>
+
+            <trans-unit id="displaymode.list">
+                <source>List</source>
+            </trans-unit>
+
+            <trans-unit id="displaymode.taglist">
+                <source>Tag List</source>
+            </trans-unit>
+
+            <trans-unit id="displaymode.detail">
+                <source>Detail</source>
+            </trans-unit>
+
+            <!-- settings  -->
+
+            <trans-unit id="settings.isTagList">
+                <source>is Taglist</source>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode">
+                <source>Select Mode: Select Items from current Page or from Pages</source>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.currentPage">
+                <source>Show Items from current Page</source>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.page">
+                <source>select Items from selected Pages</source>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.global">
+                <source>select Items global</source>
+            </trans-unit>
+
+            <trans-unit id="settings.selectmode.searchresults">
+                <source>select Search Results</source>
+            </trans-unit>
+
+            <trans-unit id="settings.limitToCategories">
+                <source>select Items from this Categories</source>
+            </trans-unit>
+
+            <trans-unit id="settings.limitTocColPosIDs">
+                <source>select Items from this Columns</source>
+            </trans-unit>
+
+            <trans-unit id="settings.usePaging">
+                <source>Show page browser</source>
+            </trans-unit>
+
+            <trans-unit id="settings.itemsPerPage">
+                <source>Number of articles per Page</source>
+            </trans-unit>
+
+
+
+            <trans-unit id="settings.sortfield">
+                <source>Sort Field</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.sorting">
+                <source>Sorting</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.colPos">
+                <source>Column</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.date">
+                <source>Date</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.crdate">
+                <source>Creation Date</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sortfield.tstamp">
+                <source>Last Modified Date</source>
+            </trans-unit>
+
+
+            <trans-unit id="settings.sorting">
+                <source>Sorting</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sorting.asc">
+                <source>Ascending</source>
+            </trans-unit>
+
+            <trans-unit id="settings.sorting.desc">
+                <source>Descending</source>
+            </trans-unit>
+
+
+            <!-- ColPos -->
+
+            <trans-unit id="articles">
+                <source>Articles</source>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,116 @@
+<f:layout name="Default"/>
+
+<f:section name="content">
+
+	<div id="typo3-docheader">
+		<div id="typo3-docheader-row1">
+			<div class="buttonsleft">
+
+			</div>
+			<div class="buttonsright">
+				<f:be.buttons.shortcut />
+			</div>
+		</div>
+		<div id="typo3-docheader-row2">
+			<div class="docheader-row2-left">
+				<f:be.buttons.csh />
+				<f:be.menus.actionMenu>
+					<f:be.menus.actionMenuItem label="Migration" controller="" action="migrateData" />
+				</f:be.menus.actionMenu>
+			</div>
+			<div class="docheader-row2-right">
+				<f:be.pagePath />
+				<f:be.pageInfo />
+			</div>
+		</div>
+
+	</div>
+	<div id="typo3-docbody">
+
+	<div id="typo3-inner-docbody">
+
+		<div id="typo3-docheader-rowextra"></div>
+
+
+		<!-- EDITING FORM -->
+
+		<h2>Daten Migrieren</h2>
+
+		<f:flashMessages/>
+
+		<f:link.action action="doMigrateData" controller="Admin">Jetzt Daten Migrieren</f:link.action>
+		<!--
+		<f:render partial="FormErrors"/>
+		<f:form action="create" enctype="multipart/form-data" name="newTour"
+		        object="{newTour}">
+
+			<div id="typo3-docheader">
+				<div id="typo3-docheader-row1">
+					<div class="buttonsleft">
+
+						<div class="buttongroup">
+							<f:link.action action="list"><span
+									class="t3-icon t3-icon-actions t3-icon-actions-document t3-icon-document-close">&nbsp;</span></f:link.action>
+                        <span
+		                        class="t3-icon t3-icon-actions t3-icon-actions-document t3-icon-document-save"><input
+		                        type="image" title="Dokument speichern" src="clear.gif" class="c-inputButton"
+		                        name="_savedok"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+						<table class="typo3-TCEforms">
+
+							<tbody>
+							<tr>
+								<td colspan="2">
+									<div class="typo3-dyntabmenu-divs">
+
+										<div class="c-tablayer" style="display: block;">
+
+
+											<table width="100%" cellspacing="0" cellpadding="0" border="0">
+												<tbody>
+												<tr>
+													<td colspan="2">
+			
+
+														<table width="100%" cellspacing="0" cellpadding="0" border="0"
+															   class="wrapperTable">
+															<tbody>
+															<tr class="class-main2">
+																<td class="formField-header" colspan="2"><span class="class-main4">
+																<strong><label for="tourName">Name
+																</label></strong></span></td>
+															</tr>
+															<tr class="class-main1">
+																<td valign="top" class="formField-field" colspan="2">
+																	<span class="t3-form-field-container"><f:form.textfield property="tourName"/></span>
+
+																	<div style="clear:both;"></div>
+																</td>
+															</tr>
+															</tbody>
+														</table>
+
+													</td>
+												</tr>
+												</tbody>
+											</table>
+
+							</div>
+						</div>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+		</f:form>
+-->
+	</div>
+
+</div>
+
+</f:section>

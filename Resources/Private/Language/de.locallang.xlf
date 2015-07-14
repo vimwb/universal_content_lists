@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-01-05T16:38:09Z" product-name="universal_content_lists">
+		<header/>
+		<body>
+
+            <trans-unit id="dateformat">
+                <source>m/d/Y</source>
+                <target>d.m.Y</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.more">
+                <source>more</source>
+                <target>mehr</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.back">
+                <source>back</source>
+                <target>zurück</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.tags">
+                <source>Tags</source>
+                <target>Tags</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.no_tag">
+                <source>no Tag selected</source>
+                <target>kein Tag ausgewählt</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.related">
+                <source>Related Articles</source>
+                <target>Verwandte Artikel</target>
+            </trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.first">
+				<source>First</source>
+				<target>Start</target>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.last">
+				<source>Last</source>
+				<target>Ende</target>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.previous">
+				<source>Previous</source>
+				<target>Zurück</target>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.next">
+				<source>Next</source>
+				<target>Weiter</target>
+			</trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.noResults">
+                <source>no Results</source>
+                <target>keine Ergebnisse gefunden</target>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.resultText">
+                <source>Found %s results for Searchword:'%s'</source>
+                <target>%s Ergebnisse für Suchbegriff: '%s'</target>
+            </trans-unit>
+
+		</body>
+	</file>
+</xliff>

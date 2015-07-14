@@ -1,0 +1,33 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<div class="article image-header-0 image-beside-left image-beside csc-textpic-intext-left-nowrap-{data.uid}">
+    <f:if condition="{vid:compareString(needle:'youtu', hayStack:data.video, method:'contains')}">
+        <f:then>
+            <div class="image-wrap col-xs-12 col-md-4">
+                <vid:videoPlayer id="video_{data.uid}" class="video-js vjs-default-skin embed-responsive embed-responsive-4by3"
+                                 url="{data.video}" type="youtube"/>
+            </div>
+        </f:then>
+        <f:else>
+            <vid:fal uid="{data.uid}" cField="{data.image}" as="imageItem">
+                <f:if condition="{imageItem}">
+                    <div class="image-wrap col-xs-12 col-md-4">
+                        <figure class="image">
+                            <img class="lazyload" src="/fileadmin/templates/images/blank.gif"
+                                 data-src="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{listImageMaxWidth}' treatIdAsReference:'1')}"
+                                 data-bigger="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{biggerwidth}' treatIdAsReference:'1')}"
+                                 data-large="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{largewidth}' treatIdAsReference:'1')}"
+                                 data-medium="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{mediumwidth}' treatIdAsReference:'1')}"
+                                 data-small="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{smallwidth}' treatIdAsReference:'1')}"
+                                 alt="{imageItem.0.alternative}" title="{imageItem.0.title}">
+                        </figure>
+                    </div>
+                </f:if>
+            </vid:fal>
+        </f:else>
+    </f:if>
+    <div class="text crop">
+        <h2>{data.header}</h2>
+        <div class="date">{data.date -> f:format.date(format: '{f:translate(key: \'dateformat\')}')}</div>
+        <f:format.html>{data.tx_universalcontentlists_short}{data.bodytext}</f:format.html>
+    </div>
+</div>

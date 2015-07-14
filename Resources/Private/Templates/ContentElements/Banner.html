@@ -1,0 +1,81 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<div class="banner">
+    <f:if condition="{data.colPos} == 3"><f:if condition="{data.headerLayout} != 100"><div class="teaser"><h3>{data.header}</h3></div></f:if></f:if>
+    <vid:link typoLink="{data.header_link}">
+        <f:if condition="{vid:compareString(needle:'youtu', hayStack:data.tx_universalcontentlists_video, method:'contains')}">
+            <f:then>
+                <div class="image-wrap col-xs-12">
+                    <vid:videoPlayer id="video_{data.uid}" class="video-js vjs-default-skin embed-responsive embed-responsive-4by3"
+                                     url="{data.tx_universalcontentlists_video}" type="youtube"/>
+                </div>
+            </f:then>
+            <f:else>
+                <vid:fal uid="{data.uid}" cField="{data.image}" as="imageItem">
+                    <f:if condition="{imageItem -> f:count()} > 1">
+                        <f:then>
+                            <div id="carousel-{data.uid}" class="carousel slide" data-interval="5000"
+                                 data-wrap="" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    <f:for each="{imageItem}" as="item" iteration="iteration">
+                                        <div class="item{f:if(condition: iteration.isFirst,then:' active')}"
+                                             data-itemno="{iteration.index}">
+                                            <vid:link typoLink="{item.link}">
+                                                <img class="lazyload"
+                                                     src="/fileadmin/templates/images/blank.gif"
+                                                     data-src="{f:uri.image(src:'{item.uid}' width:'{listImageMaxWidth}' height:'{listImageMaxHeight}c' treatIdAsReference:'1')}"
+                                                     data-bigger="{f:uri.image(src:'{item.uid}' width:'{biggerwidth}' height:'{biggerheight}c' treatIdAsReference:'1')}"
+                                                     data-large="{f:uri.image(src:'{item.uid}' width:'{largewidth}' height:'{largeheight}c' treatIdAsReference:'1')}"
+                                                     data-medium="{f:uri.image(src:'{item.uid}' width:'{mediumwidth}' height:'{mediumheight}c' treatIdAsReference:'1')}"
+                                                     data-small="{f:uri.image(src:'{item.uid}' width:'{smallwidth}' height:'{smallheight}c' treatIdAsReference:'1')}"
+                                                     alt="{item.alternative}"
+                                                     title="{item.title}">
+                                            </vid:link>
+                                        </div>
+                                    </f:for>
+                                </div>
+                                <f:if condition="{imageItem -> f:count()} > 1">
+                                    <ol class="carousel-indicators hidden-xs">
+                                        <f:for each="{imageItem}" as="item" iteration="iteration">
+                                            <li data-target="#carousel-1" data-slide-to="{iteration.index}"
+                                                class="{f:if(condition: iteration.isFirst,then:'active')}"></li>
+                                        </f:for>
+                                    </ol>
+                                    <f:link.page class="left carousel-control hidden-xs" additionalAttributes="{data-slide: 'prev', role: 'button'}"
+                                                 section="carousel-{data.uid}" >
+                                        <span class="arrow arrow-left hidden-xs"></span>
+                                        <span class="sr-only">{f:translate(key: 'tx_universalcontentlists.contentlist.previous')}</span>
+                                    </f:link.page>
+                                    <f:link.page class="right carousel-control hidden-xs" additionalAttributes="{data-slide: 'next', role: 'button'}"
+                                                 section="carousel-{data.uid}">
+                                        <span class="arrow arrow-right hidden-xs"></span>
+                                        <span class="sr-only">{f:translate(key: 'tx_universalcontentlists.contentlist.next')}</span>
+                                    </f:link.page>
+                                </f:if>
+                            </div>
+
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{imageItem}">
+                                <div class="image-wrap">
+                                    <figure class="image">
+                                        <vid:link typoLink="{imageItem.0.link}">
+                                        <img class="lazyload"
+                                             src="/fileadmin/templates/images/blank.gif"
+                                             data-src="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{listImageMaxWidth}' treatIdAsReference:'1')}"
+                                             data-bigger="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{biggerwidth}' treatIdAsReference:'1')}"
+                                             data-large="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{largewidth}' treatIdAsReference:'1')}"
+                                             data-medium="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{mediumwidth}' treatIdAsReference:'1')}"
+                                             data-small="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{smallwidth}' treatIdAsReference:'1')}"
+                                             alt="{imageItem.0.alternative}"
+                                             title="{imageItem.0.title}">
+                                        </vid:link>
+                                    </figure>
+                                </div>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+                </vid:fal>
+            </f:else>
+        </f:if>
+    </vid:link>
+</div>

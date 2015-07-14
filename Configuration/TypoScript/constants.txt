@@ -1,0 +1,114 @@
+
+## Define custom categories
+# customsubcategory=settings=Settings
+# customsubcategory=list=List
+# customsubcategory=show=DetailView
+# customsubcategory=persistence=Persistence
+# customsubcategory=imageSizes=>>ImageSizes
+
+plugin.tx_universalcontentlists {
+	view {
+		# cat=Content List/file/101; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:universal_content_lists/Resources/Private/Templates/
+		# cat=Content List/file/102; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:universal_content_lists/Resources/Private/Partials/
+		# cat=Content List/file/103; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:universal_content_lists/Resources/Private/Layouts/
+	}
+
+    settings {
+
+        # cat=Content List/settings/99; type=string; label=Is Taglist: Display an Article List by Tag
+        isTagList = 0
+
+        # cat=Content List/settings/100; type=string; label=forbidden CTypes: Content Types to exclude from Content Lists
+        forbiddenCTypes = list
+
+        # cat=Content List/settings/101; type=options[CurrentPage=currentPage, Pages=pid ,Global=global, Searchresults=searchresults]; label=Select Mode: Select Articles from current Page or from Pages
+        selectMode = currentPage
+
+        # cat=Content List/settings/102; type=string; label=storage PIDs: select Articles from this Page IDs (Comma Separated)
+        storagePIDs =
+
+        # cat=Content List/settings/103; type=string; label=Categorie IDs: select Articles with this Category IDs (Comma Separated)
+        limitToCategories =
+
+        # cat=Content List/settings/104; type=string; label=Column IDs: select Articles with this Column IDs (Comma Separated, Default articlelistColPos from PageTS is 30)
+        limitTocColPosIDs =
+
+        # cat=Content List/settings/105; type=boolean; label=Use Pagination: show the Paginagtion under the List
+        usePaging = 0
+
+        # cat=Content List/settings/106; type=string; label=Number of Pages: How many Pages are displayed in the Pager
+        numPages = 5
+
+        # cat=Content List/settings/106; type=string; label=Items per Page: How many Articles are visible on one Page
+        itemsPerPage = 10
+
+        # cat=Content List/settings/107; type=options[Sorting=sorting,Column=colPos,Date=date,CreationDate=crdate,ModifiedDate=tstamp]; label=Sortfield: Sort Articles by this Field
+        sortfield = sorting
+
+        # cat=Content List/settings/108; type=options[Ascending=ASC, Descending=DESC]; label=Sorting Order: Order for Articles
+        sorting = ASC
+
+        # cat=Content List/settings/109; type=string; label=TagList PID: ID of Page that displays the ArticleList by Tag
+        taglistPID =
+
+        # cat=Content List/settings/110; type=string; label=Search List PID: ID of Page that displays the Search Results List
+        searchlistPID =
+
+        # cat=Content List/settings/111; type=string; label=getRelatedFromTags: Load related Articles List in Detailview from Tags
+        getRelatedFromTags = 0
+
+        # cat=Content List/settings/112; type=string; label=relatedLimit: Limit related List items
+        relatedLimit = 3
+
+    }
+
+    list {
+        # cat=Content List/list/100; type=string; label=Thumbnail Width: MaxWidth of Thumbnails in List
+        listImageMaxWidth = 620
+
+        # cat=Content List/list/101; type=string; label=Thumbnail Width: MaxHeight of Thumbnails in List
+        listImageMaxHeight = 300
+    }
+
+    show {
+        # cat=Content List/show/100; type=string; label=Thumbnail Width: MaxWidth of Thumbnails in Detail View (Show)
+        showImageMaxWidth = 620
+
+        # cat=Content List/show/100; type=string; label=Thumbnail Height: MaxHeight of Thumbnails in Detail View (Show)
+        showImageMaxHeight = 465
+    }
+
+    imageSizes {
+        # cat=Content imageSizes/100; type=string; label=Bigger Width: default 1200
+        biggerwidth = 1200
+        # cat=Content imageSizes/101; type=string; label=Bigger Height
+        biggerheight = 900
+        # cat=Content imageSizes/102; type=string; label=Bigger Width: default 940
+        largewidth = 940
+        # cat=Content imageSizes/103; type=string; label=Bigger Height
+        largeheight = 705
+        # cat=Content imageSizes/104; type=string; label=Bigger Width: default 720
+        mediumwidth = 720
+        # cat=Content imageSizes/105; type=string; label=Bigger Height
+        mediumheight = 540
+        # cat=Content imageSizes/106; type=string; label=Bigger Width: default 610
+        smallwidth = 620
+        # cat=Content imageSizes/107; type=string; label=Bigger Height
+        smallheight = 465
+    }
+
+}
+
+module.tx_universalcontentlists {
+    view {
+        templateRootPath = EXT:universal_content_lists/Resources/Private/Backend/Templates/
+        partialRootPath = EXT:universal_content_lists/Resources/Private/Backend/Partials/
+        layoutRootPath = EXT:universal_content_lists/Resources/Private/Backend/Layouts/
+    }
+    persistence {
+        storagePid =
+    }
+}

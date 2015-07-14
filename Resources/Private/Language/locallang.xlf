@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-05T16:38:09Z" product-name="universal_content_lists">
+		<header/>
+		<body>
+
+            <trans-unit id="dateformat">
+                <source>m/d/Y</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.more">
+                <source>more</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.back">
+                <source>back</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.tags">
+                <source>Tags</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.no_tag">
+                <source>no Tag selected</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.related">
+                <source>Related Articles</source>
+            </trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.first">
+				<source>First</source>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.last">
+				<source>Last</source>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.previous">
+				<source>Previous</source>
+			</trans-unit>
+
+			<trans-unit id="tx_universalcontentlists.contentlist.next">
+				<source>Next</source>
+			</trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.noResults">
+                <source>no Results</source>
+            </trans-unit>
+
+            <trans-unit id="tx_universalcontentlists.contentlist.resultText">
+                <source>Found %s results for Searchword: '%s'</source>
+            </trans-unit>
+
+        </body>
+	</file>
+</xliff>

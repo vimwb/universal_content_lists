@@ -1,0 +1,33 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+        <!--
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode.detail</numIndex>
+                                        <numIndex index="1">DetailView -> show</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                </el>
+            </ROOT>
+        </sDEF>
+        -->
+    </sheets>
+</T3DataStructure>

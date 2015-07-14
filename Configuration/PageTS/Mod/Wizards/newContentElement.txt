@@ -1,0 +1,45 @@
+####################################
+#### CONTENT ELEMENTS ####
+####################################
+mod.wizards.newContentElement.wizardItems {
+    plugin{
+        elements{
+            universalcontentlists_contentlist{
+                icon = gfx/c_wiz/bullet_list.gif
+                title = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:plugin.contentlist
+                description = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:plugin.contentlist_description
+                tt_content_defValues{
+                    CType = list
+                    list_type = universalcontentlists_contentlist
+                }
+            }
+        }
+        show := addToList(universalcontentlists_contentlist)
+    }
+    common{
+        elements{
+            universal_content_article{
+                icon = gfx/c_wiz/text_image_right.gif
+                title = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:content_element.article
+                description = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:content_element.article_description
+                tt_content_defValues {
+                    CType = universal_content_article
+                }
+            }
+        }
+        show := addToList(universal_content_article)
+    }
+    special{
+        elements{
+            universal_content_banner{
+                icon = gfx/c_wiz/images_only.gif
+                title = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:content_element.banner
+                description = LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:content_element.banner_description
+                tt_content_defValues {
+                    CType = universal_content_banner
+                }
+            }
+        }
+        show := addToList(universal_content_banner)
+    }
+}

@@ -1,0 +1,29 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<f:layout name="Default"/>
+<f:section name="main">
+
+    <f:if condition="{tag}">
+        <f:then>
+            <p>"{tag.headline}"</p>
+            <f:if condition="{articles}">
+                <f:for each="{articles}" as="article">
+                    <f:render partial="ContentList/ListItem" arguments="{_all}"/>
+                </f:for>
+                <f:if condition="{usePaging}">
+                    <f:render partial="ContentList/Pagination" arguments="{_all}"/>
+                </f:if>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:if condition="{articles}">
+                <f:for each="{articles}" as="article">
+                    <f:render partial="ContentList/ListItem" arguments="{_all}"/>
+                </f:for>
+                <f:if condition="{usePaging}">
+                    <f:render partial="ContentList/Pagination" arguments="{_all}"/>
+                </f:if>
+            </f:if>
+        </f:else>
+    </f:if>
+
+</f:section>

@@ -1,0 +1,237 @@
+<T3DataStructure>
+    <meta>
+        <langDisable>1</langDisable>
+    </meta>
+    <sheets>
+
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.isTagList>
+                        <TCEforms>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.isTagList</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.isTagList>
+
+                    <settings.selectMode>
+                        <TCEforms>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode </label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode.currentPage</numIndex>
+                                        <numIndex index="1">currentPage</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode.page</numIndex>
+                                        <numIndex index="1">pid</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode.global</numIndex>
+                                        <numIndex index="1">global</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode.searchresults</numIndex>
+                                        <numIndex index="1">searchresults</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.selectMode>
+
+                    <settings.storagePIDs>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.selectmode.page</label>
+                            <displayCond>FIELD:settings.selectMode:=:pid</displayCond>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>pages</allowed>
+                                <multiple>1</multiple>
+                                <maxitems>100</maxitems>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.storagePIDs>
+
+                    <settings.limitToCategories>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.limitToCategories</label>
+                            <config>
+                                <type>select</type>
+                                <autoSizeMax>50</autoSizeMax>
+                                <foreign_table>sys_category</foreign_table>
+                                <foreign_table_where> AND sys_category.sys_language_uid IN (-1, 0) ORDER BY sys_category.title ASC</foreign_table_where>
+                                <maxitems>9999</maxitems>
+                                <renderMode>tree</renderMode>
+                                <size>10</size>
+                                <treeConfig>
+                                    <appearance>
+                                        <expandAll>1</expandAll>
+                                        <showHeader>1</showHeader>
+                                    </appearance>
+                                    <parentField>parent</parentField>
+                                </treeConfig>
+                            </config>
+                        </TCEforms>
+                    </settings.limitToCategories>
+
+                    <settings.limitTocColPosIDs>
+                        <TCEforms>
+                            <exclude>1</exclude>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.limitTocColPosIDs</label>
+                            <config>
+                                <type>select</type>
+                                <itemsProcFunc>VID\UniversalContentLists\Backend\ItemsProcFuncs\ColPosList->itemsProcFunc</itemsProcFunc>
+                                <multiple>0</multiple>
+                                <maxitems>100</maxitems>
+                                <size>6</size>
+                            </config>
+                        </TCEforms>
+                    </settings.limitTocColPosIDs>
+
+                    <settings.usePaging>
+                        <TCEforms>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.usePaging</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.usePaging>
+
+                    <settings.itemsPerPage>
+                        <TCEforms>
+                            <label> LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.itemsPerPage</label>
+                            <config>
+                                <type>input</type>
+                                <size>3</size>
+                                <default>10</default>
+                                <eval>required,int</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.itemsPerPage>
+
+                    <settings.sortfield>
+                        <TCEforms>
+                            <label> LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield.sorting</numIndex>
+                                        <numIndex index="1">sorting</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield.colPos</numIndex>
+                                        <numIndex index="1">colPos</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield.date</numIndex>
+                                        <numIndex index="1">date</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield.crdate</numIndex>
+                                        <numIndex index="1">crdate</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sortfield.tstamp</numIndex>
+                                        <numIndex index="1">tstamp</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.sortfield>
+
+                    <settings.sorting>
+                        <TCEforms>
+                            <label> LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sorting</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sorting.asc</numIndex>
+                                        <numIndex index="1">ASC</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:settings.sorting.desc</numIndex>
+                                        <numIndex index="1">DESC</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.sorting>
+
+                </el>
+            </ROOT>
+
+        </sDEF>
+
+        <settings>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <!--
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">LLL:EXT:universal_content_lists/Resources/Private/Language/Backend.xlf:displaymode.list</numIndex>
+                                        <numIndex index="1">ContentList -> list</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    -->
+                    <view.templateRootPath>
+                        <TCEforms>
+                            <label>Template Root Path</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </view.templateRootPath>
+                    <view.partialRootPath>
+                        <TCEforms>
+                            <label>Partial Root Path</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </view.partialRootPath>
+                    <view.layoutRootPath>
+                        <TCEforms>
+                            <label>Layout Root Path</label>
+                            <config>
+                                <type>input</type>
+                                <size>20</size>
+                            </config>
+                        </TCEforms>
+                    </view.layoutRootPath>
+                </el>
+            </ROOT>
+        </settings>
+    </sheets>
+</T3DataStructure>

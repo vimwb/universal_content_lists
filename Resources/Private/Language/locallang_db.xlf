@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-01-05T16:38:09Z" product-name="universal_content_lists">
+		<header/>
+		<body>
+
+            <!--  types -->
+            <trans-unit id="tabs.displayRelations">
+                <source>Relations</source>
+            </trans-unit>
+
+            <trans-unit id="tabs.globaldisplay">
+                <source>Global Display</source>
+            </trans-unit>
+
+            <trans-unit id="palette.display">
+                <source>Universal Display Settings</source>
+            </trans-unit>
+
+            <!-- tt_vontent -->
+
+
+            <trans-unit id="video">
+                <source>Video URL</source>
+            </trans-unit>
+
+            <trans-unit id="short">
+                <source>Teaser Text</source>
+            </trans-unit>
+
+            <trans-unit id="display.pages">
+                <source>Show Banner on THIS Pages ONLY</source>
+            </trans-unit>
+
+            <trans-unit id="display.recursive">
+                <source>Show Banner on THIS Pages ONLY including Subpages</source>
+            </trans-unit>
+
+            <trans-unit id="display.excludepages">
+                <source>DONT show Banner Banner on THIS Pages</source>
+            </trans-unit>
+
+            <trans-unit id="display.exclude_recursive">
+                <source>>DONT show Banner Banner on THIS Pages including Subpages</source>
+            </trans-unit>
+
+            <trans-unit id="tags">
+                <source>Tags</source>
+            </trans-unit>
+
+            <trans-unit id="related">
+                <source>Related Articles</source>
+            </trans-unit>
+
+            <!-- tx_universalcontentlists_domain_model_tag -->
+
+            <trans-unit id="tag">
+                <source>Tag</source>
+            </trans-unit>
+
+            <trans-unit id="headline">
+                <source>Headline</source>
+            </trans-unit>
+
+            <trans-unit id="taglist_pid">
+                <source>Page for Tag List</source>
+            </trans-unit>
+
+
+
+		</body>
+	</file>
+</xliff>

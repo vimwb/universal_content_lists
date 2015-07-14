@@ -1,0 +1,74 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<f:layout name="Default" />
+<f:section name="main">
+    <div class="image-header-0 image-intext-left image-beside csc-textpic-intext-left-nowrap-{detailArticle.uid}">
+        <vid:fal uid="{detailArticle.uid}" cField="{detailArticle.image}" as="imageItem">
+            <f:if condition="{imageItem}">
+                <div class="image-wrap">
+                    <f:if condition="{vid:compareString(needle:'youtube', hayStack:imageItem.0.link, method:'contains')}">
+                        <f:then>
+                            <div class="videocontent">
+                                <vid:videoPlayer id="video_{imageItem.0.uid}" class="video-js vjs-default-skin" width="285"
+                                                 height="200" url="{imageItem.0.link}" type="youtube"/>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <figure class="image">
+                                <img class="lazyload" src="/fileadmin/templates/images/blank.gif"
+                                     data-src="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{listImageMaxWidth}' treatIdAsReference:'1')}"
+                                     data-bigger="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{biggerwidth}' treatIdAsReference:'1')}"
+                                     data-large="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{largewidth}' treatIdAsReference:'1')}"
+                                     data-medium="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{mediumwidth}' treatIdAsReference:'1')}"
+                                     data-small="{f:uri.image(src:'{imageItem.0.uid}' maxWidth:'{smallwidth}' treatIdAsReference:'1')}"
+                                     alt="{imageItem.0.alternative}" title="{imageItem.0.title}">
+                            </figure>
+
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:if>
+        </vid:fal>
+        <div class="text">
+            <div><f:link.page pageUid="{detailArticle.page.uid}">{detailArticle.page.title}</f:link.page></div>
+            <h2>{detailArticle.header}</h2>
+            <div>{detailArticle.date -> f:format.date(format: '{f:translate(key: \'dateformat\')}')}</div>
+            <f:format.html>{detailArticle.bodytext}</f:format.html>
+            <f:link.action controller="ContentList" action="list" arguments="{currentPage:currentPage}">{f:translate(key: 'tx_universalcontentlists.contentlist.back')}</f:link.action>
+            <f:if condition="{detailArticle.tags}">
+                <div>
+                    <h3>{f:translate(key: 'tx_universalcontentlists.contentlist.tags', extensionName: 'universal_content_lists')}</h3>
+                    <f:for each="{detailArticle.tags}" as="tag" iteration="iterator">
+
+                        <f:if condition="{tag.taglistPID}">
+                            <f:then>
+                                <f:link.action action="list" controller="ContentList" pageUid="{tag.taglistPID}" arguments="{tagID:tag.uid}">{tag.headline}</f:link.action>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{settings.taglistPID}">
+                                    <f:then>
+                                        <f:link.action action="list" controller="ContentList" pageUid="{settings.taglistPID}" arguments="{tagID:tag.uid}">{tag.headline}</f:link.action>
+                                    </f:then>
+                                    <f:else>
+                                        <span class="bg-warning">no Taglist PID defined for "<strong>{tag.headline}</strong>". Please set taglistPID in the Tag or in settings.taglistPID</span>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+
+                        <f:if condition="{iterator.isLast}">
+                            <f:else>,&nbsp;</f:else>
+                        </f:if>
+                    </f:for>
+                </div>
+            </f:if>
+            <f:if condition="{detailArticle.relations}">
+                <div>
+                    <h3>{f:translate(key: 'tx_universalcontentlists.contentlist.related', extensionName: 'universal_content_lists')}</h3>
+                    <f:for each="{detailArticle.relations}" as="article" iteration="iterator">
+                        <f:render partial="ContentList/ListItem" arguments="{_all}"/>
+                    </f:for>
+                </div>
+            </f:if>
+        </div>
+    </div>
+</f:section>

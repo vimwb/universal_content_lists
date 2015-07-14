@@ -1,0 +1,200 @@
+config.tx_extbase {
+    persistence{
+        enableAutomaticCacheClearing = 1
+
+        classes {
+
+            VID\UniversalContentLists\Domain\Model\File {
+                mapping {
+                    tableName = sys_file
+                }
+            }
+            VID\UniversalContentLists\Domain\Model\FileReference {
+                mapping {
+                    tableName = sys_file_reference
+                    columns {
+                        uid_local.mapOnProperty = file
+                    }
+                }
+            }
+
+            VID\UniversalContentLists\Domain\Model\Page {
+                mapping {
+                    tableName = pages
+                    columns {
+                        uid.mapOnProperty = uid
+                        pid.mapOnProperty = pid
+                        sorting.mapOnProperty = sorting
+                        title.mapOnProperty = title
+                        subtitle.mapOnProperty = subtitle
+                    }
+                }
+            }
+
+            VID\UniversalContentLists\Domain\Model\UniversalContent {
+                mapping {
+                    tableName = tt_content
+                    columns {
+                        uid.mapOnProperty = uid
+                        pid.mapOnProperty = page
+                        sorting.mapOnProperty = sorting
+                        CType.mapOnProperty = ctype
+                        header.mapOnProperty = header
+                        header_link.mapOnProperty = headerLink
+                        header_layout.mapOnProperty = headerLayout
+
+                        bodytext.mapOnProperty = bodytext
+                        image.mapOnProperty = image
+                        image_link.mapOnProperty = imageLink
+                        imagecaption.mapOnProperty = imagecaption
+                        colPos.mapOnProperty = colPos
+                        categories.mapOnProperty = categories
+
+                        tx_universalcontentlists_short.mapOnProperty = short
+                        tx_universalcontentlists_video.mapOnProperty = video
+
+                        tx_universalcontentlists_tags.mapOnProperty = tags
+                        tx_universalcontentlists_related.mapOnProperty = relations
+                        tx_universalcontentlists_pages.mapOnProperty = showOnPages
+                        tx_universalcontentlists_recursive.mapOnProperty = showOnPagesRecursive
+                        tx_universalcontentlists_excludepages.mapOnProperty = excludeOnPages
+                        tx_universalcontentlists_exclude_recursive.mapOnProperty = excludeOnPagesRecursive
+                    }
+                }
+            }
+        }
+        # make sure ref_index is updated
+        updateReferenceIndex = 1
+    }
+}
+
+plugin.tx_universalcontentlists {
+    view {
+        templateRootPath = {$plugin.tx_universalcontentlists.view.templateRootPath}
+        partialRootPath = {$plugin.tx_universalcontentlists.view.partialRootPath}
+        layoutRootPath = {$plugin.tx_universalcontentlists.view.layoutRootPath}
+    }
+    features {
+        # uncomment the following line to enable the new Property Mapper.
+        # rewrittenPropertyMapper = 1
+
+        skipDefaultArguments = 1
+    }
+    settings {
+
+        isTagList = {$plugin.tx_universalcontentlists.settings.isTagList}
+
+        isTagList = {$plugin.tx_universalcontentlists.settings.isTagList}
+
+        forbiddenCTypes = {$plugin.tx_universalcontentlists.settings.forbiddenCTypes}
+
+        # colPos / pid
+        selectMode = {$plugin.tx_universalcontentlists.settings.selectMode}
+
+        # 1,2,3
+        storagePIDs = {$plugin.tx_universalcontentlists.settings.storagePIDs}
+
+        # 1,2,3
+        limitToCategories = {$plugin.tx_universalcontentlists.settings.limitToCategories}
+
+        # 30
+        limitTocColPosIDs = {$plugin.tx_universalcontentlists.settings.limitTocColPosIDs}
+
+        # 0/1
+        usePaging = {$plugin.tx_universalcontentlists.settings.usePaging}
+
+        # 5
+        numPages = {$plugin.tx_universalcontentlists.settings.numPages}
+
+        # 10
+        itemsPerPage = {$plugin.tx_universalcontentlists.settings.itemsPerPage}
+
+        sortfield = {$plugin.tx_universalcontentlists.settings.sortfield}
+
+        sorting = {$plugin.tx_universalcontentlists.settings.sorting}
+
+        taglistPID = {$plugin.tx_universalcontentlists.settings.taglistPID}
+
+        searchlistPID = {$plugin.tx_universalcontentlists.settings.searchlistPID}
+
+        getRelatedFromTags = {$plugin.tx_universalcontentlists.settings.getRelatedFromTags}
+
+        relatedLimit = {$plugin.tx_universalcontentlists.settings.relatedLimit}
+
+        variables {
+            listImageMaxWidth = {$plugin.tx_universalcontentlists.list.listImageMaxWidth}
+            showImageMaxWidth = {$plugin.tx_universalcontentlists.show.showImageMaxWidth}
+            biggerwidth = {$plugin.tx_universalcontentlists.imageSizes.biggerwidth}
+            largewidth = {$plugin.tx_universalcontentlists.imageSizes.largewidth}
+            mediumwidth = {$plugin.tx_universalcontentlists.imageSizes.mediumwidth}
+            smallwidth = {$plugin.tx_universalcontentlists.imageSizes.smallwidth}
+
+            listImageMaxHeight = {$plugin.tx_universalcontentlists.list.listImageMaxHeight}
+            showImageMaxHeight = {$plugin.tx_universalcontentlists.show.showImageMaxHeight}
+            biggerheight = {$plugin.tx_universalcontentlists.imageSizes.biggerheight}
+            largeheight = {$plugin.tx_universalcontentlists.imageSizes.largeheight}
+            mediumheight = {$plugin.tx_universalcontentlists.imageSizes.mediumheight}
+            smallheight = {$plugin.tx_universalcontentlists.imageSizes.smallheight}
+        }
+    }
+
+    contentlist = USER
+    contentlist {
+        userFunc      = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        pluginName    = Contentlist
+        extensionName = UniversalContentLists
+        vendorName    = VID
+
+        controller = ContentList
+        action = list
+        switchableControllerActions {
+            ContentList {
+                1 = list
+            }
+        }
+        view < plugin.tx_universalcontentlists.view
+        persistence < plugin.tx_universalcontentlists.persistence
+        settings < plugin.tx_universalcontentlists.settings
+        variables < plugin.tx_universalcontentlists.variables
+    }
+
+    detailview = USER
+    detailview {
+        userFunc      = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        pluginName    = DetailView
+        extensionName = UniversalContentLists
+        vendorName    = VID
+
+        controller = DetailView
+        action = show
+        switchableControllerActions {
+            DetailView {
+                1 = show
+            }
+        }
+        view < plugin.tx_universalcontentlists.view
+        persistence < plugin.tx_universalcontentlists.persistence
+        settings < plugin.tx_universalcontentlists.settings
+        variables < plugin.tx_universalcontentlists.variables
+    }
+}
+
+plugin.tx_universalcontentlists._CSS_DEFAULT_STYLE (
+
+)
+
+# Module configuration
+module.tx_universalcontentlists {
+    persistence {
+        storagePid = {$module.tx_universalcontentlists.persistence.storagePid}
+    }
+    view {
+        templateRootPath = {$module.tx_universalcontentlists.view.templateRootPath}
+        partialRootPath = {$module.tx_universalcontentlists.view.partialRootPath}
+        layoutRootPath = {$module.tx_universalcontentlists.view.layoutRootPath}
+    }
+}
+
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:universal_content_lists/Configuration/TypoScript/ContentElements/Article.ts">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:universal_content_lists/Configuration/TypoScript/ContentElements/Banner.ts">

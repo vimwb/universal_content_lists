@@ -1,0 +1,46 @@
+{namespace vid = VID\UniversalContentLists\ViewHelpers}
+<f:if condition="{pages}">
+    <nav>
+        <ul class="pagination pagination-centered">
+            <li class="{pagination.prevClass}">
+                <f:link.action action="list" controller="ContentList"
+                               arguments="{currentPage:1}" additionalAttributes="{aria-label:'First'}">
+                    <span aria-hidden="true">{f:translate(key: 'tx_universalcontentlists.contentlist.first')}</span>
+                </f:link.action>
+            </li>
+            <li class="{pagination.prevClass}">
+                <f:link.action action="list" controller="ContentList"
+                               arguments="{currentPage:pagination.prevPage}" additionalAttributes="{aria-label:'Previous'}">
+                    <span aria-hidden="true">{f:translate(key: 'tx_universalcontentlists.contentlist.previous')}</span>
+                </f:link.action>
+            </li>
+            <f:for each="{pages}" as="page">
+                <li class="{page.pageClass}">
+                    <f:if condition="{page.pageClass} == 'disabled'">
+                        <f:then><a href="#">{page.pagenumber}</a></f:then>
+                        <f:else>
+                            <f:link.action action="list" controller="ContentList"
+                                           arguments="{currentPage:page.pagenumber}">
+                                {page.pagenumber}
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                </li>
+            </f:for>
+            <li class="{pagination.nextClass}">
+                <f:link.action action="list" controller="ContentList"
+                               arguments="{currentPage:pagination.nextPage}" additionalAttributes="{aria-label:'Next'}">
+                    <!--<span aria-hidden="true">&rsaquo;</span>-->
+                    <span aria-hidden="true">{f:translate(key: 'tx_universalcontentlists.contentlist.next')}</span>
+                </f:link.action>
+            </li>
+            <li class="{pagination.nextClass}">
+                <f:link.action action="list" controller="ContentList"
+                               arguments="{currentPage:pagination.numPages}" additionalAttributes="{aria-label:'Last'}">
+                    <!--<span aria-hidden="true">&raquo;</span>-->
+                    <span aria-hidden="true">{f:translate(key: 'tx_universalcontentlists.contentlist.last')}</span>
+                </f:link.action>
+            </li>
+        </ul>
+    </nav>
+</f:if>
