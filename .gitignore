@@ -16,3 +16,22 @@
 /t3lib
 # Ignore temp directory.
 /typo3temp/
+Documentation.tmpl/Includes.txt
+Documentation.tmpl/Index.rst
+Documentation.tmpl/Readme.rst
+Documentation.tmpl/Settings.yml
+Documentation.tmpl/Targets.rst
+Documentation.tmpl/Administrator/Index.rst
+Documentation.tmpl/ChangeLog/Index.rst
+Documentation.tmpl/Configuration/Index.rst
+Documentation.tmpl/Developer/Index.rst
+Documentation.tmpl/Images/IntroductionPackage.png
+Documentation.tmpl/Images/AdministratorManual/ExtensionManager.png
+Documentation.tmpl/Images/UserManual/BackendView.png
+Documentation.tmpl/Introduction/Index.rst
+Documentation.tmpl/KnownProblems/Index.rst
+Documentation.tmpl/Localization.de_DE.tmpl/Index.rst
+Documentation.tmpl/Localization.de_DE.tmpl/README
+Documentation.tmpl/Localization.de_DE.tmpl/Settings.yml
+Documentation.tmpl/ToDoList/Index.rst
+Documentation.tmpl/User/Index.rst
