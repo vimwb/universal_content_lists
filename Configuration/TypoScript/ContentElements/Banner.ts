@@ -8,8 +8,12 @@ tt_content.universal_content_banner {
 	20 = FLUIDTEMPLATE
 	20 {
 		file = {$plugin.tx_universalcontentlists.view.templateRootPath}ContentElements/Banner.html
-        partialRootPath = {$plugin.tx_universalcontentlists.view.partialRootPath}
-        layoutRootPath = {$plugin.tx_universalcontentlists.view.layoutRootPath}
+        partialRootPath {
+            10 = {$plugin.tx_universalcontentlists.view.partialRootPath}
+        }
+        layoutRootPath {
+            10 = {$plugin.tx_universalcontentlists.view.layoutRootPath}
+        }
 
         variables {
 

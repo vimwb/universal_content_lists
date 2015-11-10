@@ -203,7 +203,7 @@
                         </TCEforms>
                     </switchableControllerActions>
                     -->
-                    <view.templateRootPath>
+                    <view.templateRootPaths.10>
                         <TCEforms>
                             <label>Template Root Path</label>
                             <config>
@@ -211,8 +211,8 @@
                                 <size>20</size>
                             </config>
                         </TCEforms>
-                    </view.templateRootPath>
-                    <view.partialRootPath>
+                    </view.templateRootPaths.10>
+                    <view.partialRootPaths.10>
                         <TCEforms>
                             <label>Partial Root Path</label>
                             <config>
@@ -220,8 +220,8 @@
                                 <size>20</size>
                             </config>
                         </TCEforms>
-                    </view.partialRootPath>
-                    <view.layoutRootPath>
+                    </view.partialRootPaths.10>
+                    <view.layoutRootPaths.10>
                         <TCEforms>
                             <label>Layout Root Path</label>
                             <config>
@@ -229,7 +229,7 @@
                                 <size>20</size>
                             </config>
                         </TCEforms>
-                    </view.layoutRootPath>
+                    </view.layoutRootPaths.10>
                 </el>
             </ROOT>
         </settings>

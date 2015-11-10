@@ -70,9 +70,15 @@ config.tx_extbase {
 
 plugin.tx_universalcontentlists {
     view {
-        templateRootPath = {$plugin.tx_universalcontentlists.view.templateRootPath}
-        partialRootPath = {$plugin.tx_universalcontentlists.view.partialRootPath}
-        layoutRootPath = {$plugin.tx_universalcontentlists.view.layoutRootPath}
+        templateRootPaths{
+            10 = {$plugin.tx_universalcontentlists.view.templateRootPath}
+        }
+        partialRootPaths {
+            10 =  {$plugin.tx_universalcontentlists.view.partialRootPath}
+        }
+        layoutRootPaths {
+            10 =  {$plugin.tx_universalcontentlists.view.layoutRootPath}
+        }
     }
     features {
         # uncomment the following line to enable the new Property Mapper.
@@ -189,9 +195,15 @@ module.tx_universalcontentlists {
         storagePid = {$module.tx_universalcontentlists.persistence.storagePid}
     }
     view {
-        templateRootPath = {$module.tx_universalcontentlists.view.templateRootPath}
-        partialRootPath = {$module.tx_universalcontentlists.view.partialRootPath}
-        layoutRootPath = {$module.tx_universalcontentlists.view.layoutRootPath}
+        templateRootPaths {
+            10 = {$module.tx_universalcontentlists.view.templateRootPath}
+        }
+        partialRootPaths {
+            10 = {$module.tx_universalcontentlists.view.templateRootPath}
+        }
+        layoutRootPaths {
+            10 = {$module.tx_universalcontentlists.view.templateRootPath}
+        }
     }
 }
 

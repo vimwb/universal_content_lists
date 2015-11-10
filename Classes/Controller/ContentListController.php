@@ -78,7 +78,7 @@ class ContentListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
 	 * @return void
 	 */
 	protected function initializeCache() {
-		\TYPO3\CMS\Core\Cache\Cache::initializeCachingFramework();
+		//\TYPO3\CMS\Core\Cache\Cache::initializeCachingFramework();
 		try {
 			$this->cacheInstance = GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Cache\\CacheManager')->getCache('tx_universalcontentlists_cache');
 		} catch (\TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException $e) {

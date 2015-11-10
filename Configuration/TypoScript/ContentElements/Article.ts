@@ -8,9 +8,12 @@ tt_content.universal_content_article {
 	20 = FLUIDTEMPLATE
 	20 {
 		file = {$plugin.tx_universalcontentlists.view.templateRootPath}ContentElements/Article.html
-        partialRootPath = {$plugin.tx_universalcontentlists.view.partialRootPath}
-        layoutRootPath = {$plugin.tx_universalcontentlists.view.layoutRootPath}
-
+        partialRootPath {
+            10 = {$plugin.tx_universalcontentlists.view.partialRootPath}
+        }
+        layoutRootPath {
+            10 = {$plugin.tx_universalcontentlists.view.layoutRootPath}
+        }
 
         variables {
 
